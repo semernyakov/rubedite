@@ -1,0 +1,12 @@
+from rest_framework import routers
+
+from apps.scores.views import ScoreViewSet
+from apps.users.views import UserViewSet
+
+# Settings
+api = routers.DefaultRouter()
+api.trailing_slash = '/?'
+
+# Users API
+api.register(r'users', UserViewSet)
+api.register(r'scores', ScoreViewSet)
